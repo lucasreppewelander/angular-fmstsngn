@@ -24,7 +24,8 @@
 }
 
 .wrapper {
-  width: 700px;
+  max-width: 700px;
+  width: 90%;
   margin: 50px auto 200px;
   background-color: #fff;
   border-radius: 10px;
@@ -98,5 +99,33 @@
 
   pre {
     white-space: pre-wrap;
+  }
+}
+
+@media (max-width: 599px) {
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .wrapper {
+    margin-bottom: 30px;
+    .menu {
+      padding-top: 20px;
+      flex-wrap: wrap;
+
+      .selectWrapper {
+        flex: 1 1 50%;
+      }
+
+      select {
+        background-position-x: 94%;
+        background-position-y: 50%;
+        background-size: 5%;
+      }
+
+      label {
+        margin-top: 10px;
+      }
+    }
   }
 }

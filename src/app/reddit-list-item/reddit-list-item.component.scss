@@ -93,3 +93,15 @@
     }
   }
 }
+
+@media (max-width: 599px) {
+  .item__content {
+    .column {
+      flex-wrap: wrap;
+
+      p:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
