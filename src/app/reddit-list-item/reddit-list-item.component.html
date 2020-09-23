@@ -1,0 +1,43 @@
+<div
+  [ngClass]="isOpened === true ? 'item item__opened' : 'item'"
+  (click)="onClick()"
+>
+  <div class="item__content">
+    <h3>{{ item.title }}</h3>
+
+    <div class="column">
+      <p class="star">
+        <i class="fa fa-star" aria-hidden="true"></i> {{ item.score }}
+      </p>
+      <p class="subtle">
+        <i class="fa fa-commenting" aria-hidden="true"></i>
+        {{ item.num_comments }}
+      </p>
+      <p class="subtle">
+        <i class="fa fa-calendar" aria-hidden="true"></i> {{ item.created }}
+      </p>
+      <p class="subtle">
+        <i class="fa fa-user" aria-hidden="true"></i> {{ item.author }}
+      </p>
+    </div>
+  </div>
+  <div
+    [ngClass]="isOpened === true ? 'less-content more-content' : 'less-content'"
+  >
+    <div *ngIf="item.num_comments <= 0" class="text">{{ item.text }}</div>
+    <div *ngIf="item.text.length === 0" class="text bad-state">
+      <i
+        >No content to be seen, please refer to the permalink
+        <a class="bad-state-link" href="{{ item.permalink }}" target="_blank">
+          <i class="fa fa-external-link" aria-hidden="true"></i>
+          on reddit instead
+        </a>
+      </i>
+    </div>
+    <comment-list
+      *ngIf="item.num_comments > 0"
+      [isOpened]="isOpened"
+      [url]="item.permalink"
+    ></comment-list>
+  </div>
+</div>

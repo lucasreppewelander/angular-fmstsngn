@@ -1,0 +1,6 @@
+<div *ngIf="!!thread" class="text">{{ thread }}</div>
+
+<comment-list-item
+  *ngFor="let item of comments"
+  [item]="item"
+></comment-list-item>

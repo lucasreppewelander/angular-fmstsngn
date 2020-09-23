@@ -1,0 +1,102 @@
+.header {
+  height: 300px;
+  background-color: rgb(14, 198, 211);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.wrapper {
+  width: 700px;
+  margin: 50px auto 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: -70px;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+
+  .menu {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    .selectWrapper {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.7);
+        margin-bottom: 5px;
+      }
+    }
+
+    select {
+      padding: 8px 25px 8px 8px;
+      min-width: 100px;
+      background: transparent;
+      border: 1px solid darken(rgba(14, 198, 211, 0.6), 20);
+      border-radius: 5px;
+      margin-right: 15px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      background-image: url("data:image/svg+xml,<svg width='24' height='24' xmlns='http://www.w3.org/2000/svg'><path d='m0,6l12,12l12,-12l-24,0z'/><path fill='none' d='m0,0l24,0l0,24l-24,0l0,-24z'/></svg>");
+      background-repeat: no-repeat;
+      background-position-x: 90%;
+      background-position-y: 50%;
+      background-size: 10%;
+      cursor: pointer;
+
+      &:hover {
+        transition: all 0.3s;
+        background-color: darken(rgba(14, 198, 211, 0.1), 20);
+      }
+    }
+
+    button {
+      padding: 8px;
+      background: transparent;
+      border: 1px solid darken(rgba(14, 198, 211, 0.6), 20);
+      border-radius: 5px;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transition: all 0.3s;
+        background-color: darken(rgba(14, 198, 211, 0.1), 20);
+
+        &:disabled {
+          background-color: transparent;
+        }
+      }
+
+      &:disabled {
+        border-color: darken(rgba(#aaa, 0.3), 20);
+        background-color: transparent;
+      }
+    }
+  }
+
+  pre {
+    white-space: pre-wrap;
+  }
+}
